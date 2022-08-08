@@ -1,0 +1,12 @@
+#!/usr/bin/make -f
+
+#DH_VERBOSE = 1
+
+overwrite_dh_auto_build:
+	mkdir -p output/
+	GOOS=linux GOARCH="$(TARGET_ARCH)" CGO_ENABLED=0 go build -mod vendor -o output/sops go.mozilla.org/sops/v3/cmd/sops
+
+dh_clean:
+overwrite_dh_auto_clean:
+	rm -rf output/
+

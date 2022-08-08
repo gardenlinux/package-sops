@@ -1,0 +1,12 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: sops
+Upstream-Contact: AJ Bahnken <ajvb+sops@mozilla.com>
+Source: https://github.com/mozilla/sops
+
+Files: *
+Copyright: Mozilla
+License: MPL2.0
+
+Files: debian/*
+Copyright: Garden Linux
+License: MPL2.0

@@ -1,0 +1,10 @@
+Source: sops
+Maintainer: AJ Bahnken <ajvb+sops@mozilla.com>
+priority: extra
+Build-Depends: debhelper-compat (= 13)
+
+Package: sops
+Architecture: linux-any
+Priority: extra
+Homepage: https://go.mozilla.org/sops
+Description: Sops is an editor of encrypted files that supports YAML, JSON and BINARY formats and encrypts with AWS KMS and PGP.
