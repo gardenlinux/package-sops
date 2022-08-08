@@ -4,7 +4,7 @@ priority: extra
 Build-Depends: debhelper-compat (= 13)
 
 Package: sops
-Architecture: linux-any
+Architecture: amd64 arm64
 Priority: extra
 Homepage: https://go.mozilla.org/sops
 Description: Sops is an editor of encrypted files that supports YAML, JSON and BINARY formats and encrypts with AWS KMS and PGP.

@@ -2,11 +2,32 @@
 
 #DH_VERBOSE = 1
 
-overwrite_dh_auto_build:
+GOPATH		:="$(shell pwd)/gohome"
+GOCACHE		:="$(shell pwd)/gocache"
+GO 		:= GOCACHE=$(GOCACHE) GOPATH=$(GOPATH) GOPROXY=https://proxy.golang.org go
+
+
+%:
+	dh $@
+
+override_dh_usrlocal:
+
+override_dh_auto_test:
+	echo "skip tests"
+
+
+override_dh_auto_build:
+	mkdir $(GOPATH)
+	mkdir $(GOCACHE)
+	$(GO) mod vendor
 	mkdir -p output/
-	GOOS=linux GOARCH="$(TARGET_ARCH)" CGO_ENABLED=0 go build -mod vendor -o output/sops go.mozilla.org/sops/v3/cmd/sops
+	ls output/
+	GOOS=linux GOARCH="$(TARGET_ARCH)" CGO_ENABLED=0 $(GO) build -mod vendor -o output/sops go.mozilla.org/sops/v3/cmd/sops
+	mkdir -p debian/sops/usr/local/bin
+	cp output/sops debian/sops/usr/local/bin/
 
-dh_clean:
-overwrite_dh_auto_clean:
+
+
+clean:
 	rm -rf output/
-
+	dh_clean
