@@ -11,7 +11,6 @@ variables:
 
 include:
 - project: gardenlinux/gardenlinux-package-build
-  ref: debug-sops-pipeline
   file:
   - pipeline/pipeline.yml      
 
