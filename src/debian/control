@@ -1,7 +1,7 @@
 Source: sops
 Maintainer: AJ Bahnken <ajvb+sops@mozilla.com>
 priority: extra
-Build-Depends: debhelper-compat (= 13)
+Build-Depends: debhelper-compat (= 13), golang
 
 Package: sops
 Architecture: amd64 arm64

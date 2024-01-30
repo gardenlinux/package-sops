@@ -22,7 +22,7 @@ override_dh_auto_build:
 	$(GO) mod vendor
 	mkdir -p output/
 	ls output/
-	GOOS=linux GOARCH="$(TARGET_ARCH)" CGO_ENABLED=0 $(GO) build -mod vendor -o output/sops go.mozilla.org/sops/v3/cmd/sops
+	GOOS=linux GOARCH="$(TARGET_ARCH)" CGO_ENABLED=0 $(GO) build -mod vendor -o output/sops github.com/getsops/sops/v3/cmd/sops
 	mkdir -p debian/sops/usr/local/bin
 	cp output/sops debian/sops/usr/local/bin/
 
