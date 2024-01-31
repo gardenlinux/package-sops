@@ -6,3 +6,4 @@ version_orig=3.8.1
 version="$version_orig-0"
 git_src --branch "v$version_orig" https://github.com/getsops/sops.git
 import_src src
+version_suffix=gardenlinux0
